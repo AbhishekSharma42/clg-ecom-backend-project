@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_addresses",
+  "info": {
+    "singularName": "user-address",
+    "pluralName": "user-addresses",
+    "displayName": "User address"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "user_address"
+    },
+    "Address": {
+      "type": "string"
+    },
+    "zipcode": {
+      "type": "string"
+    },
+    "Mobile": {
+      "type": "string"
+    },
+    "Landmark": {
+      "type": "string"
+    }
+  }
+}
