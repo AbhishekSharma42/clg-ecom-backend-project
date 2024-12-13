@@ -13,10 +13,12 @@
   "pluginOptions": {},
   "attributes": {
     "Title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "Price": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "size": {
       "type": "json"
@@ -45,24 +47,48 @@
     },
     "slug": {
       "type": "uid",
-      "targetField": "Title"
-    },
-    "Description": {
-      "type": "text"
+      "targetField": "Title",
+      "required": true
     },
     "Colors": {
       "type": "json"
-    },
-    "category": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::category.category"
     },
     "quantity": {
       "type": "string"
     },
     "ShowInHeader": {
       "type": "boolean"
+    },
+    "Stocks": {
+      "type": "integer",
+      "default": 0,
+      "required": true,
+      "min": 0
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "products"
+    },
+    "Description": {
+      "type": "richtext"
+    },
+    "OrderStatus": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "packed",
+        "received",
+        "cancle"
+      ],
+      "required": false
+    },
+    "ShowInHeaderTitle": {
+      "type": "text"
+    },
+    "ShowInHeaderDesc": {
+      "type": "text"
     }
   }
 }

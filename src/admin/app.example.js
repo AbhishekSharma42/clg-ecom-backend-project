@@ -1,6 +1,6 @@
 const config = {
   locales: [
-    // 'ar',
+    'ar',
     // 'fr',
     // 'cs',
     // 'de',
@@ -27,6 +27,7 @@ const config = {
     // 'zh-Hans',
     // 'zh',
   ],
+
 };
 
 const bootstrap = (app) => {
